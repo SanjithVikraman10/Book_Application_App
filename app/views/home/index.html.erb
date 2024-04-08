@@ -1,0 +1,16 @@
+<!-- app/views/home/index.html.erb -->
+
+<h1>Welcome to the Book Collection App</h1>
+
+<% if @books.any? %>
+  <h2>Latest Books</h2>
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= "#{book.title} by #{book.author}" %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No books found.</p>
+<% end %>
+
+<%= link_to 'Add a new book', new_book_path %>
